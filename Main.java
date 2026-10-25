@@ -8,10 +8,7 @@ import java.nio.charset.StandardCharsets;
 public class Main {
     public static void main(String[] args) throws IOException {
         int port = 80;
-        HttpServer server = HttpServer.create(
-            new InetSocketAddress(port), 0
-        );
-
+        HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
         server.createContext("/", exchange -> {
             String url = exchange.getRequestURI().getPath();
             String method = exchange.getRequestMethod();
